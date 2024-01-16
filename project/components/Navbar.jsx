@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import useMediaQuery from "../hooks/useMediaQuery"
 
-import { HashLink } from 'react-router-hash-link';
 
 import { motion } from "framer-motion"
 
@@ -95,7 +94,7 @@ export const Navbar = () => {
 
                 <div className="flex items-center justify-between mx-auto w-5/6">
                     <div></div>
-                    <HashLink smooth to="#sadasd">asd</HashLink>
+                    <a href="#sadasd">asd</a>
                     {/* <Link className='saturate-200 duration-200 flex justify-center items-center h-14 w-20 sm:h-20 sm:w-32 ' to={'/'}>
                         <div className="relative rounded-full overflow-hidden h-10 w-14 sm:h-16 sm:w-24 shadow-lg hover:scale-110 transition duration-200">
 
