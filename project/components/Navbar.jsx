@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { motion } from "framer-motion"
 
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { CiMenuFries } from "react-icons/ci";
 import { AiOutlineClose } from 'react-icons/ai'
 
 // props: 
@@ -57,7 +57,7 @@ const LinkTemplate = ({ urlHash, page }) => {
         <a
             href={`#${urlHash}`}
             className={`${location.hash == urlHash ? "text-yellow-500" : ""
-                }  hover:scale-125 transition duration-300`}
+                }  hover:text-yellow-500 transition duration-300`}
         >
             {page}
         </a>
@@ -68,12 +68,13 @@ const LinkTemplate = ({ urlHash, page }) => {
 
 export const Navbar = ({ isTopOfPage }) => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
+    const modalRef = useRef(null);
 
-    const navbarBackground = isTopOfPage ? "top-0" : "bg-white shadow-[0_1px_1px_0_#FFFFFF]";
     const mobileMenuVisibility = isMenuToggled ? "flex" : "hidden";
 
+    const navbarBackground = isTopOfPage ? "top-0 opacity-100" : "bg-gray-950 opacity-90";
+    const navbarTextColor = isTopOfPage ? "text-black" : "text-white";
 
-    const modalRef = useRef(null);
 
     const closeModal = (e) => {
         e.stopPropagation();
@@ -83,141 +84,141 @@ export const Navbar = ({ isTopOfPage }) => {
     }
 
     return (
-        <nav className={`${navbarBackground} fixed flex flex-col z-40 w-full`} >
+        <>
+            <nav className={`${navbarBackground} fixed flex flex-col z-40 w-full font-playfair`} >
 
-            <div className="flex items-center justify-between mx-auto w-5/6">
-                <a className='saturate-200 duration-200 flex justify-center items-center h-14 w-20 sm:h-20 sm:w-32 ' href="#aaa">
-                    <div className="relative rounded-full overflow-hidden h-10 w-14 sm:h-16 sm:w-24 shadow-lg hover:scale-110 transition duration-200">
-
-                        <span className="absolute inset-0 z-10 rounded-full shadow-inner"></span>
-
-                    </div>
-
-                </a>
                 {/* DESKTOP NAV */}
-                {/* line with # or btn */}
-                <div className={`hidden text-xl 2xl:text-2xl lg:flex justify-between gap-10 2xl:gap-16 text-black font-bold`}>
-                    <LinkTemplate
-                        urlHash='/'
-                        page="Начало"
-                    />
-                    <LinkTemplate
-                        urlHash='/description/'
-                        page="За сградата"
-                    />
-                    <LinkTemplate
-                        urlHash='/apartments/'
-                        page="Апартаменти"
-                    />
-                    <LinkTemplate
-                        urlHash='/investor/'
-                        page="Инвеститор"
-                    />
-                    <LinkTemplate
-                        urlHash='/contacts/'
-                        page="Контакти"
-                    />
-                </div>
-
-                <button
-                    className="block lg:hidden rounded-full text-black p-2"
-                    onClick={() => setIsMenuToggled(!isMenuToggled)}
-                    aria-label="menu"
-                >
-                    <GiHamburgerMenu size={24} />
-                </button>
-
-
-                {/* MOBILE MENU POPUP */}
-                <div
-                    className={`${mobileMenuVisibility} fixed inset-0 z-40 items-center justify-center bg-black bg-opacity-80`}
-                    onClick={closeModal}
-                    ref={modalRef}
-                >
-                    <motion.div
-                        className="fixed right-0 bottom-0 h-full bg-blue-900 w-[300px]"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.1 }}
-                        transition={{ duration: 0.3 }}
-                        variants={{
-                            hidden: { opacity: 0, x: 50 },
-                            visible: { opacity: 1, x: 0 },
-                        }}
+                <div className={`py-5 flex items-center justify-between mx-auto w-5/6`}>
+                    <a
+                        className={`saturate-200 duration-200 flex justify-center items-center ${navbarTextColor} font-bold text-sm sm:text-lg lg:text-xl`}
+                        href="#landing"
                     >
-                        {/* CLOSE ICON */}
-                        <div className="flex justify-end p-12">
-                            <button
-                                onClick={() => setIsMenuToggled(!isMenuToggled)}
-                                aria-label="close"
-                            >
-                                <AiOutlineClose size={24} className="text-neutral-600" />
-                            </button>
+                        MELIORA LUXURY HOUSE
+                    </a>
+                    <>
+                        <div className={`font-playfair hidden ${navbarTextColor} text-xl 2xl:text-2xl lg:flex justify-center items-center gap-7 2xl:gap-16 `}>
+                            <LinkTemplate
+                                urlHash='landing'
+                                page="Начало"
+                            />
+                            <LinkTemplate
+                                urlHash='description'
+                                page="За къщите"
+                            />
+                            <LinkTemplate
+                                urlHash='plan'
+                                page="Разпределение"
+                            />
+                            <LinkTemplate
+                                urlHash='gallery'
+                                page="Галерия"
+                            />
+                            <LinkTemplate
+                                urlHash='contacts'
+                                page="Контакти"
+                            />
                         </div>
 
-                        {/* MENU ITEMS */}
-                        <motion.div
-                            className="flex flex-col gap-10 ml-[33%] text-2xl text-white"
-                            variants={container}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.2 }}
+                        <button
+                            className={`block lg:hidden rounded-full ${navbarTextColor} p-2`}
+                            onClick={() => setIsMenuToggled(!isMenuToggled)}
+                            aria-label="menu"
                         >
-                            <motion.div
-                                variants={navbarVariant}
-                            >
-                                <LinkMobileTemplate
-                                    urlHash='/'
-                                    page="Начало"
-                                    setIsMenuToggled={setIsMenuToggled}
-                                />
-                            </motion.div>
-                            <motion.div
-                                variants={navbarVariant}
-                                viewport={{ once: true }}
-                            >
-                                <LinkMobileTemplate
-                                    urlHash='/description'
-                                    page="За сградата"
-                                    setIsMenuToggled={setIsMenuToggled}
-                                />
-                            </motion.div>
-                            <motion.div
-                                variants={navbarVariant}
-                                viewport={{ once: true }}
-                            >
-                                <LinkMobileTemplate
-                                    urlHash='/apartments'
-                                    page="Апартаменти"
-                                    setIsMenuToggled={setIsMenuToggled}
-                                />
-                            </motion.div>
-                            <motion.div
-                                variants={navbarVariant}
-                                viewport={{ once: true }}
-                            >
+                            <CiMenuFries size={24} />
+                        </button>
+                    </>
 
-                                <LinkMobileTemplate
-                                    urlHash='/investor'
-                                    page="Инвеститор"
-                                    setIsMenuToggled={setIsMenuToggled}
-                                />
-                            </motion.div>
-                            <motion.div
-                                variants={navbarVariant}
-                                viewport={{ once: true }}
-                            >
 
-                                <LinkMobileTemplate
-                                    urlHash='/contacts'
-                                    page="Контакти"
-                                    setIsMenuToggled={setIsMenuToggled}
-                                />
-                            </motion.div>
+                </div>
+            </nav>
+            {/* MOBILE MENU POPUP */}
+            <div
+                className={`${mobileMenuVisibility} fixed inset-0 z-40 items-center justify-center bg-black bg-opacity-80`}
+                onClick={closeModal}
+                ref={modalRef}
+            >
+                <motion.div
+                    className="fixed right-0 bottom-0 h-full bg-blue-900 w-[300px]"
+                    initial="hidden"
+                    whileInView="visible"
+                    transition={{ duration: 0.1 }}
+                    variants={{
+                        hidden: { opacity: 0, x: 50 },
+                        visible: { opacity: 1, x: 0 },
+                    }}
+                >
+                    {/* CLOSE ICON */}
+                    <div className="flex justify-end p-12">
+                        <button
+                            onClick={() => setIsMenuToggled(!isMenuToggled)}
+                            aria-label="close"
+                        >
+                            <AiOutlineClose size={24} className="text-neutral-600" />
+                        </button>
+                    </div>
+
+                    {/* MENU ITEMS */}
+                    <motion.div
+                        className="flex flex-col gap-10 ml-[33%] text-2xl text-white"
+                        variants={container}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        <motion.div
+                            variants={navbarVariant}
+                        >
+                            <LinkMobileTemplate
+                                urlHash='/'
+                                page="Начало"
+                                setIsMenuToggled={setIsMenuToggled}
+                            />
+                        </motion.div>
+                        <motion.div
+                            variants={navbarVariant}
+                            viewport={{ once: true }}
+                        >
+                            <LinkMobileTemplate
+                                urlHash='/description'
+                                page="За сградата"
+                                setIsMenuToggled={setIsMenuToggled}
+                            />
+                        </motion.div>
+                        <motion.div
+                            variants={navbarVariant}
+                            viewport={{ once: true }}
+                        >
+                            <LinkMobileTemplate
+                                urlHash='/apartments'
+                                page="Апартаменти"
+                                setIsMenuToggled={setIsMenuToggled}
+                            />
+                        </motion.div>
+                        <motion.div
+                            variants={navbarVariant}
+                            viewport={{ once: true }}
+                        >
+
+                            <LinkMobileTemplate
+                                urlHash='/investor'
+                                page="Инвеститор"
+                                setIsMenuToggled={setIsMenuToggled}
+                            />
+                        </motion.div>
+                        <motion.div
+                            variants={navbarVariant}
+                            viewport={{ once: true }}
+                        >
+
+                            <LinkMobileTemplate
+                                urlHash='/contacts'
+                                page="Контакти"
+                                setIsMenuToggled={setIsMenuToggled}
+                            />
                         </motion.div>
                     </motion.div>
-                </div>
+                </motion.div>
             </div>
-        </nav>
+        </>
     );
 };

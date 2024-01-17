@@ -1,40 +1,15 @@
 import { motion } from "framer-motion";
-import { BiLogoInstagramAlt } from "react-icons/bi";
-import { FaFacebookSquare } from "react-icons/fa";
-
-
-import { useEffect, useState } from "react";
 
 
 
 
-const Landing = () => {
+export const Landing = () => {
 
-  //--------------------------------------------------------- CUSTOM CHANGING BG-IMG
-//   const images = [
-//     "/tilia/tilia-two.webp",
-//     "/dalia/dalia-three.webp",
-//     "/ixora/ixora-one.webp",
-//     "/west-end/west-end-two.webp"
-//   ]
-
-//   const [currentImg, setCurrentImg] = useState(0);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrentImg((prevImg) => (prevImg + 1) % images.length)
-//     }, 5000);
-
-//     return () => clearInterval(interval)
-//   }, [])
-
-
-  //--------------------------------------------------------- CUSTOM CHANGING BG-IMG
 
   return (
 
     <section
-      id="начало"
+      id="landing"
     >
       <div
         className="relative"
@@ -68,4 +43,3 @@ const Landing = () => {
   );
 };
 
-export default Landing;
