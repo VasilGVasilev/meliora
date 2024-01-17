@@ -85,18 +85,18 @@ export const Navbar = ({ isTopOfPage }) => {
 
     return (
         <>
-            <nav className={`${navbarBackground} fixed flex flex-col z-40 w-full font-playfair`} >
+            <nav className={`${navbarBackground} fixed flex flex-col z-40 w-full `} >
 
                 {/* DESKTOP NAV */}
-                <div className={`py-5 flex items-center justify-between mx-auto w-5/6`}>
+                <div className={`py-5 flex items-center justify-between mx-auto w-5/6 font-playfairDisplay`}>
                     <a
-                        className={`saturate-200 duration-200 flex justify-center items-center ${navbarTextColor} font-bold text-sm sm:text-lg lg:text-xl`}
+                        className={`duration-200 flex justify-center items-center ${navbarTextColor} font-bold text-sm sm:text-lg lg:text-xl`}
                         href="#landing"
                     >
                         MELIORA LUXURY HOUSE
                     </a>
                     <>
-                        <div className={`font-playfair hidden ${navbarTextColor} text-xl 2xl:text-2xl lg:flex justify-center items-center gap-7 2xl:gap-16 `}>
+                        <div className={` hidden ${navbarTextColor} text-xl 2xl:text-2xl lg:flex justify-center items-center gap-7 2xl:gap-16 font-roboto `}>
                             <LinkTemplate
                                 urlHash='landing'
                                 page="Начало"
@@ -133,12 +133,12 @@ export const Navbar = ({ isTopOfPage }) => {
             </nav>
             {/* MOBILE MENU POPUP */}
             <div
-                className={`${mobileMenuVisibility} fixed inset-0 z-40 items-center justify-center bg-black bg-opacity-80`}
+                className={`${mobileMenuVisibility} fixed inset-0 z-40 items-center justify-center bg-gray-950 bg-opacity-85`}
                 onClick={closeModal}
                 ref={modalRef}
             >
                 <motion.div
-                    className="fixed right-0 bottom-0 h-full bg-blue-900 w-[300px]"
+                    className="fixed right-0 bottom-0 h-full bg-black w-[350px]"
                     initial="hidden"
                     whileInView="visible"
                     transition={{ duration: 0.1 }}
@@ -159,7 +159,7 @@ export const Navbar = ({ isTopOfPage }) => {
 
                     {/* MENU ITEMS */}
                     <motion.div
-                        className="flex flex-col gap-10 ml-[33%] text-2xl text-white"
+                        className="flex flex-col gap-10 ml-[25%] text-2xl text-white"
                         variants={container}
                         initial="hidden"
                         whileInView="visible"
@@ -169,7 +169,7 @@ export const Navbar = ({ isTopOfPage }) => {
                             variants={navbarVariant}
                         >
                             <LinkMobileTemplate
-                                urlHash='/'
+                                urlHash=''
                                 page="Начало"
                                 setIsMenuToggled={setIsMenuToggled}
                             />
@@ -179,8 +179,8 @@ export const Navbar = ({ isTopOfPage }) => {
                             viewport={{ once: true }}
                         >
                             <LinkMobileTemplate
-                                urlHash='/description'
-                                page="За сградата"
+                                urlHash='description'
+                                page="За къщите"
                                 setIsMenuToggled={setIsMenuToggled}
                             />
                         </motion.div>
@@ -189,8 +189,8 @@ export const Navbar = ({ isTopOfPage }) => {
                             viewport={{ once: true }}
                         >
                             <LinkMobileTemplate
-                                urlHash='/apartments'
-                                page="Апартаменти"
+                                urlHash='plan'
+                                page="Разпределение"
                                 setIsMenuToggled={setIsMenuToggled}
                             />
                         </motion.div>
@@ -200,8 +200,8 @@ export const Navbar = ({ isTopOfPage }) => {
                         >
 
                             <LinkMobileTemplate
-                                urlHash='/investor'
-                                page="Инвеститор"
+                                urlHash='gallery'
+                                page="Галерия"
                                 setIsMenuToggled={setIsMenuToggled}
                             />
                         </motion.div>

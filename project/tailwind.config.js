@@ -11,7 +11,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'playfair': ['Playfair Display', 'serif'],
+        'playfairDisplay': ['Playfair Display', 'serif'],
+        'roboto': ['Roboto', 'serif'],
       },
     },
   },
