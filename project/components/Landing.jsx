@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 import { FaCircleInfo } from "react-icons/fa6";
+import { HashLink } from "react-router-hash-link";
 
 
 export const Landing = () => {
@@ -28,7 +29,11 @@ export const Landing = () => {
                 <div className="font-playfairDisplay font-bold text-5xl md:text-7xl z-20">Meliora Luxury House</div>
                 <div className="bg-yellow-500 w-2/3 h-[1px] z-10">
                 </div>
-                <a href="#description" className="mt-10"><FaCircleInfo className="hover:text-yellow-500 duration-200 transition ease-in animate-pulseScale hover:animate-none hover:scale-110" size={30} /></a>
+                <HashLink
+                    className="mt-10"
+                    to="#description"
+                    smooth
+                ><FaCircleInfo className="hover:text-yellow-500 duration-200 transition ease-in animate-pulseScale hover:animate-none hover:scale-110" size={30} /></HashLink>
 
             </motion.div>
 

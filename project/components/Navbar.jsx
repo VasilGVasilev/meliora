@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 import { motion } from "framer-motion"
 
@@ -35,17 +36,16 @@ const LinkMobileTemplate = ({ urlHash, page, setIsMenuToggled }) => {
     const location = useLocation();
 
     return (
-        <a
-            href={`#${urlHash}`}
+        <HashLink
+            to={`#${urlHash}`}
             className={`${location.hash === urlHash ? "text-yellow-500" : ""
                 }  hover:scale-125 transition duration-300`}
             onClick={() => {
                 setIsMenuToggled(false);
             }
             }
-        >
-            {page}
-        </a>
+            smooth
+        >{page}</HashLink>
     );
 };
 
@@ -53,14 +53,12 @@ const LinkTemplate = ({ urlHash, page }) => {
     const location = useLocation()
 
     return (
-
-        <a
-            href={`#${urlHash}`}
+        <HashLink
             className={`${location.hash == urlHash ? "text-yellow-500" : ""
                 }  hover:text-yellow-500 transition duration-300`}
-        >
-            {page}
-        </a>
+            to={`#${urlHash}`}
+            smooth
+        >{page}</HashLink>
     );
 };
 
@@ -89,12 +87,12 @@ export const Navbar = ({ isTopOfPage }) => {
 
                 {/* DESKTOP NAV */}
                 <div className={`py-5 flex items-center justify-between mx-auto w-5/6 font-playfairDisplay`}>
-                    <a
+                    <HashLink
                         className={`duration-200 flex justify-center items-center ${navbarTextColor} font-bold text-lg sm:text-xl lg:text-2xl`}
-                        href="#landing"
-                    >
-                        MELIORA LUXURY HOUSE
-                    </a>
+                        to="#landing"
+                        smooth
+                    >MELIORA LUXURY HOUSE</HashLink>
+
                     <>
                         <div className={` hidden ${navbarTextColor} text-xl 2xl:text-2xl lg:flex justify-center items-center gap-7 2xl:gap-16 font-roboto `}>
                             <LinkTemplate
