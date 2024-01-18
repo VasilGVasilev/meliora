@@ -42,10 +42,8 @@ export function Contacts() {
     return (
         <section id="contacts" className="bg-white">
             <div className="flex flex-col gap-5 justify-center items-start">
-                <div className="text-black mx-10 mt-10 text-3xl md:text-7xl relative before:absolute before:top-[30%] before:left-[10%] before:w-full before:h-full before:border-r-2 before:border-b-2 before:border-yellow-500 before:z-10">Контакти</div>
-                <div
-                    className="w-full h-full flex flex-col justify-center items-center gap-14 md:flex-row py-20"
-                >
+                <div className="font-playfairDisplay text-black mx-10 mt-10 text-3xl md:text-7xl relative before:absolute before:top-[30%] before:left-[10%] before:w-full before:h-full before:border-r-2 before:border-b-2 before:border-yellow-500 before:z-10">Контакти</div>
+                <div className="w-full h-full flex flex-col justify-center items-center gap-14 md:flex-row py-20">
 
                     <motion.div
                         initial="offscreen"

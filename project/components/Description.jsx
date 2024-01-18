@@ -18,7 +18,7 @@ export const Description = () => {
     return (
         <section id="description" className="bg-black">
             <div className="flex flex-col gap-5 justify-center items-start">
-                <div className="text-white mx-10 mt-10 text-3xl md:text-7xl relative before:absolute before:top-[30%] before:left-[10%] before:w-full before:h-full before:border-r-2 before:border-b-2 before:border-yellow-500 before:z-10">За къщите</div>
+                <div className="font-playfairDisplay text-white mx-10 mt-10 text-3xl md:text-7xl relative before:absolute before:top-[30%] before:left-[10%] before:w-full before:h-full before:border-r-2 before:border-b-2 before:border-yellow-500 before:z-10">За къщите</div>
                 <div className="p-10 h-full w-full grid grid-cols-1 md:grid-cols-2 gap-14">
 
                     <motion.div
