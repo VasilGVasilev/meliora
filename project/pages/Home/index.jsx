@@ -1,3 +1,4 @@
+import { Contacts } from '../../components/Contacts'
 import { Gallery } from '../../components/Gallery'
 import { Landing } from '../../components/Landing'
 
@@ -7,6 +8,7 @@ const Home = () => {
         <>
             <Landing></Landing>
             <Gallery></Gallery>
+            <Contacts></Contacts>
         </>
     )
 }

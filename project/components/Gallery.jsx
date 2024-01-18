@@ -22,8 +22,13 @@ const SPRING_OPTIONS = {
 
 export const Gallery = () => {
     return (
-        <section id="gallery">
-            <SwipeCarousel></SwipeCarousel>
+        <section id="gallery" className="bg-black">
+            <div className="flex flex-col gap-5 justify-center items-start">
+                <div className="text-white mx-10 mt-10 text-3xl md:text-7xl relative before:absolute before:top-[30%] before:left-[10%] before:w-full before:h-full before:border-r-2 before:border-b-2 before:border-yellow-500 before:z-10">Галерия</div>
+                <div>
+                    <SwipeCarousel></SwipeCarousel>
+                </div>
+            </div>
         </section>
     )
 }
@@ -49,7 +54,7 @@ export const SwipeCarousel = () => {
         }, AUTO_DELAY);
 
         return () => clearInterval(intervalRef);
-    }, []);
+    }, [dragX]);
 
     const onDragEnd = () => {
         const x = dragX.get();
@@ -62,7 +67,7 @@ export const SwipeCarousel = () => {
     };
 
     return (
-        <div className="relative overflow-hidden bg-neutral-950 py-8">
+        <div className="relative overflow-hidden bg-black py-8">
             <motion.div
                 drag="x"
                 dragConstraints={{
