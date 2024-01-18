@@ -88,9 +88,9 @@ export const Navbar = ({ isTopOfPage }) => {
             <nav className={`${navbarBackground} fixed flex flex-col z-40 w-full `} >
 
                 {/* DESKTOP NAV */}
-                <div className={`py-3 flex items-center justify-between mx-auto w-5/6 font-playfairDisplay`}>
+                <div className={`py-5 flex items-center justify-between mx-auto w-5/6 font-playfairDisplay`}>
                     <a
-                        className={`duration-200 flex justify-center items-center ${navbarTextColor} font-bold  sm:text-lg lg:text-xl`}
+                        className={`duration-200 flex justify-center items-center ${navbarTextColor} font-bold text-lg sm:text-xl lg:text-2xl`}
                         href="#landing"
                     >
                         MELIORA LUXURY HOUSE
@@ -211,7 +211,7 @@ export const Navbar = ({ isTopOfPage }) => {
                         >
 
                             <LinkMobileTemplate
-                                urlHash='/contacts'
+                                urlHash='contacts'
                                 page="Контакти"
                                 setIsMenuToggled={setIsMenuToggled}
                             />

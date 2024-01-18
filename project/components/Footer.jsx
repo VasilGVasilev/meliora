@@ -1,33 +1,40 @@
 
-export const Footer = () => {
+
+
+import { Footer } from 'flowbite-react';
+
+export const FooterComponent = () => {
     return (
-        <footer className="h-auto bg-[#ffffff] text-black py-10 ">
-            <div className="flex flex-col gap-5 w-10/12 mx-auto text-xs">
-                <div className="flex flex-col md:flex-row justify-around items-start gap-5">
-                    <div className="flex flex-col gap-3">
-
-                        <a
-                            className="font-semibold text-base md:text-xl hover:text-yellow-500"
-                            href={`#landing`}
-                        >
-                            MELIORA LUXURY HOUSE
-                        </a>
-                        <div className="">
-                            © Meliora Luxury House 2024
-                        </div>
+        <Footer className='bg-gray-900'>
+            <div className="w-full">
+                <div className="w-full flex flex-row justify-evenly gap-8 px-6 py-8">
+                    <div>
+                        <Footer.Title title="MELIORA LUXURY HOUSE" />
+                        <Footer.LinkGroup col>
+                            <Footer.Link href="#landing">Начало</Footer.Link>
+                            <Footer.Link href="#description">За къщите</Footer.Link>
+                            <Footer.Link href="#plan">Разпределение</Footer.Link>
+                            <Footer.Link href="#gallery">Галерия</Footer.Link>
+                            <Footer.Link href="#contacts">Контакти</Footer.Link>
+                        </Footer.LinkGroup>
                     </div>
-                    <div className="flex flex-col gap-2 text-left">
-                        <p className="font-semibold text-sm">КОНТАКТИ</p>
-                        <p className="">гр.Гоце Делчев</p>
-                        <a href="mailto:mail" className="hover:text-yellow-500">mail</a>
-                        <a href="tel:00359888888888" className="text-sm hover:text-yellow-500">+359888888888</a>
-
+                    <div>
+                        <Footer.Title title="КОНТАКТИ" />
+                        <Footer.LinkGroup col>
+                            <Footer.Link href="#contacts">гр.Гоце Делчев</Footer.Link>
+                            <Footer.Link href="mailto:mail@mail.com" className='hover:text-yellow-500'>mail@mail.com</Footer.Link>
+                            <Footer.Link href="tel:00359888888888" className='hover:text-yellow-500'>+359888888888</Footer.Link>
+                        </Footer.LinkGroup>
                     </div>
 
                 </div>
+                <div className="w-full bg-gray-800 px-4 py-6 sm:flex sm:items-center sm:justify-between">
+                    <Footer.Copyright href="#" by="Meliora Luxury House" year={2024} />
+                    <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
 
+                    </div>
+                </div>
             </div>
-        </footer>
-    )
+        </Footer>
+    );
 }
-
