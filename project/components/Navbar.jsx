@@ -72,7 +72,7 @@ export const Navbar = ({ isTopOfPage }) => {
 
     const mobileMenuVisibility = isMenuToggled ? "flex" : "hidden";
 
-    const navbarBackground = isTopOfPage ? "top-0 opacity-100" : "bg-gray-950 opacity-90";
+    const navbarBackground = isTopOfPage ? "top-0 opacity-100" : "bg-gray-950 opacity-85";
     const navbarTextColor = isTopOfPage ? "text-black" : "text-white";
 
 
