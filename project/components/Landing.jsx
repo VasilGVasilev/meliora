@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-
+import { FaCircleInfo } from "react-icons/fa6";
 
 
 export const Landing = () => {
@@ -11,27 +11,24 @@ export const Landing = () => {
         <section
             id="landing"
         >
-
             <img
-                className="h-screen w-full object-cover opacity-50"
+            
+                className="relative inset-0 h-screen w-full object-cover opacity-60"
                 src="/meliora-front.jpg"
                 alt='pic'
             />
 
             <motion.div
                 viewport={{ once: true }}
-                initial={{ opacity: 0, y: -70 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ type: "spring", stiffness: 100, damping: 30, duration: 1.5 }}
-                className={`absolute top-1/3 ml-10 text-white text-base ss:text-xl`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2 }}
+                className={`absolute inset-0 px-3 flex flex-col items-center justify-center text-white text-center`}
             >
-                <span className="text-shadow-default font-semibold">Създаване на съвършенство</span>
-                <div className="mt-3 text-shadow-default font-medium flex flex-col gap-3 text-xl ss:text-4xl">
-                    <span className="" >Открийте</span>
-                    <span className="" >Meчтания Дом</span>
-                    <span className="" >Днес</span>
+                <div className="font-playfairDisplay font-bold text-5xl md:text-7xl z-20">Meliora Luxury House</div>
+                <div className="bg-yellow-500 w-2/3 h-[1px] z-10">
                 </div>
-                <a href="#проекти" className="mt-10 inline-block bg-black text-white px-3 py-4 font-semibold text-base md:text-lg transition hover:bg-black hover:text-white">За къщите</a>
+                <a href="#description" className="mt-10"><FaCircleInfo className="hover:text-yellow-500 duration-200 transition ease-in animate-pulseScale hover:animate-none hover:scale-110" size={30}/></a>
 
             </motion.div>
 

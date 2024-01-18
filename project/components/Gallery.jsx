@@ -22,9 +22,9 @@ const SPRING_OPTIONS = {
 
 export const Gallery = () => {
     return (
-        <div id="gallery">
+        <section id="gallery">
             <SwipeCarousel></SwipeCarousel>
-        </div>
+        </section>
     )
 }
 
