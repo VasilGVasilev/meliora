@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Navbar } from "../../components/Navbar";
 import { useEffect, useState } from "react";
+import { Footer } from "../../components/Footer";
 
 const Layout = () => {
     const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -20,6 +21,7 @@ const Layout = () => {
         <>
             <Navbar isTopOfPage={isTopOfPage}></Navbar>
             <Outlet />
+            <Footer></Footer>
         </>
     )
 };

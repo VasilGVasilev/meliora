@@ -12,7 +12,7 @@ export const Landing = () => {
             id="landing"
         >
             <img
-            
+
                 className="relative inset-0 h-screen w-full object-cover opacity-60"
                 src="/meliora-front.jpg"
                 alt='pic'
@@ -28,9 +28,10 @@ export const Landing = () => {
                 <div className="font-playfairDisplay font-bold text-5xl md:text-7xl z-20">Meliora Luxury House</div>
                 <div className="bg-yellow-500 w-2/3 h-[1px] z-10">
                 </div>
-                <a href="#description" className="mt-10"><FaCircleInfo className="hover:text-yellow-500 duration-200 transition ease-in animate-pulseScale hover:animate-none hover:scale-110" size={30}/></a>
+                <a href="#description" className="mt-10"><FaCircleInfo className="hover:text-yellow-500 duration-200 transition ease-in animate-pulseScale hover:animate-none hover:scale-110" size={30} /></a>
 
             </motion.div>
+
 
         </section>
 
