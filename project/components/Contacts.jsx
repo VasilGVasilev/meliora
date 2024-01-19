@@ -57,7 +57,7 @@ export function Contacts() {
                             <div className="flex flex-col justify-center items-start bg-yellow-500 p-3">
                                 <MdSmartphone size={40} className="text-white"></MdSmartphone>
                             </div>
-                            <div className="bg-white shadow-xl flex flex-col gap-5 justify-center items-start p-10">
+                            <div className="w-60 h-40 bg-white shadow-xl flex flex-col gap-5 justify-center items-start p-10">
                                 <span className="font-bold text-2xl">Позвънете ни</span>
                                 <a href="tel:00359888888888" className="text-gray-500 hover:text-yellow-500">+359888888888</a>
 
@@ -77,7 +77,7 @@ export function Contacts() {
                                 <FaLocationArrow size={40} className="text-white"></FaLocationArrow>
 
                             </div>
-                            <div className="bg-white shadow-xl flex flex-col gap-5 justify-center items-start p-10">
+                            <div className="w-60 h-40 bg-white shadow-xl flex flex-col gap-5 justify-center items-start p-10">
                                 <span className="font-bold text-2xl">Адрес</span>
                                 <span className="text-gray-500">гр. Гоце Делчев,<br /> ул. Иван Иванов 100</span>
 
@@ -97,7 +97,7 @@ export function Contacts() {
                             <div className="flex flex-col justify-center items-start bg-yellow-500 p-3">
                                 <IoIosMail size={40} className="text-white"></IoIosMail>
                             </div>
-                            <div className="bg-white shadow-xl flex flex-col gap-5 justify-center items-start p-10">
+                            <div className="w-60 h-40 bg-white shadow-xl flex flex-col gap-5 justify-center items-start p-10">
                                 <span className="font-bold text-2xl">Пишете ни</span>
                                 <a href="mailto:mail" className="text-gray-500 hover:text-yellow-500">office@mail.bg</a>
 

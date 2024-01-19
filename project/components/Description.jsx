@@ -7,8 +7,6 @@ const imgVariants = {
     onscreen: {
         opacity: 1, scale: 1,
         transition: {
-            type: "spring",
-            bounce: 0.4,
             duration: 1
         }
     }
